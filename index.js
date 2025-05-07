@@ -10,7 +10,9 @@ const port = process.env.PORT || 8000;
 
 // middleware
 app.use(cors( {
-    origin: 'https://enquiry-backend-lg9v.onrender.com', // allow requests from this origin
+  origin: 'http://localhost:5173',
+
+  // allow requests from this origin
 
     credentials: true // allow credentials (cookies, authorization headers, etc.)
 }
@@ -22,6 +24,7 @@ app.use(express.json()); // to parse incoming JSON
 connectDB();
 
 // routes
+
 app.use('/api', enquiryRoutes);
 
 // server start
