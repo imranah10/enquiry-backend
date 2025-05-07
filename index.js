@@ -11,8 +11,8 @@ const port = process.env.PORT || 8000;
 // middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    // allow requests from this origin
+    origin: ["http://localhost:5173", "https://enquiry-frontend.vercel.app"],
+    credentials: true, // agar cookies ya auth token use kar rahe ho
   })
 );
 app.use(express.json()); // to parse incoming JSON
